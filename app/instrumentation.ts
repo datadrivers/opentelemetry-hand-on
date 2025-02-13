@@ -5,7 +5,7 @@ import { OTLPMetricExporter } from '@opentelemetry/exporter-metrics-otlp-grpc';
 import { PeriodicExportingMetricReader } from '@opentelemetry/sdk-metrics';
 
 const metricsEndpoint = process.env.OTEL_EXPORTER_METRICS_ENDPOINT || 'http://otel-collector:4317';
-const tracesEndpoint = process.env.OTEL_EXPORTER_TRACES_ENDPOINT || 'http://jaeger:14317';
+const tracesEndpoint = process.env.OTEL_EXPORTER_TRACES_ENDPOINT || 'http://jaeger:4317';
 
 const metricExporter = new OTLPMetricExporter({
     // url is optional and can be omitted - default is http://localhost:4318/v1/metrics

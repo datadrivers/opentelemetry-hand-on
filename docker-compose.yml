@@ -6,7 +6,7 @@ services:
     environment:
       - OTEL_SERVICE_NAME=my-app
       - OTEL_EXPORTER_METRICS_ENDPOINT=http://otel-collector:4317
-      - OTEL_EXPORTER_TRACES_ENDPOINT=http://jaeger:14317
+      - OTEL_EXPORTER_TRACES_ENDPOINT=http://jaeger:4317
     ports:
       - "8080:8080"
     depends_on:

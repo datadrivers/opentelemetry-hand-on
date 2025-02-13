@@ -4,7 +4,8 @@ OpenTelemetry setup showing its capabilities.
 
 Using:
 
-- Node.js - To send traces, metrics and logs
+- Node.js
+  - An example app to send traces, metrics and logs via OpenTelemetry SDK
 - OpenTelemetry Collector
   - To receive metrics and logs
   - To export metrics to Prometheus and export logs to Loki

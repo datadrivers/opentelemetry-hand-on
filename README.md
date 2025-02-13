@@ -54,5 +54,5 @@ docker compose up -d
 # Check the logs of the app
 docker compose logs -f app
 # ... or of the collector
-docker compose logs -f collector
+docker compose logs -f otel-collector
 ```

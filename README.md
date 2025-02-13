@@ -5,10 +5,12 @@ OpenTelemetry setup showing its capabilities.
 Using:
 
 - Node.js - To send traces, metrics and logs
-- OpenTelemetry Collector - To receive traces, metrics and logs
+- OpenTelemetry Collector
+  - To receive traces, metrics and logs
+  - To export traces to Jaeger, export metrics to Prometheus and export logs to Loki
 - Jaeger - To visualize traces
 - Prometheus - To gather metrics
-- Grafana - To visualize metrics
+- Grafana - To visualize metrics from Prometheus
 - Loki - To visualize logs
 
 ## App Set Up

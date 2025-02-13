@@ -13,6 +13,12 @@ Using:
 - Grafana - To visualize metrics from Prometheus
 - Loki - To visualize logs
 
+## TODOs
+
+- [ ] Decide whether to use Jaeger or OpenTelemetry Collector to collect traces, metrics and logs
+  - [ ] If Jaeger: Find a way to export data sent to Jaeger to Prometheus for metrics and Loki for logs
+  - [ ] If OpenTelemetry Collector: Find a way to export traces to Jaeger, metrics to Prometheus and logs to Loki
+
 ## App Set Up
 
 ```bash

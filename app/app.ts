@@ -9,7 +9,11 @@ const app: Express = express();
 const tracer = trace.getTracer(process.env.OTEL_SERVICE_NAME || 'my-app');
 
 function getRandomNumber(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+    const span = tracer.startSpan('get-random-number'); // Start a trace span
+    const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+    span.end(); // End the trace span
+
+    return randomNumber;
 }
 
 app.get('/rolldice', (req, res) => {
@@ -28,10 +32,10 @@ app.get('/rollrick', (req, res) => {
     console.log('Faking rick...');
 
     const span = tracer.startSpan('roll-rick'); // Start a trace span
-    const randonNumber = getRandomNumber(1, 6);
+    const randomNumber = getRandomNumber(1, 6);
     const randomName = faker.person.fullName(); 
     const randomEmail = faker.internet.email();
-    const result = `Rolled a ${randonNumber} for ${randomName} at ${randomEmail}`
+    const result = `Rolled a ${randomNumber} for ${randomName} at ${randomEmail}`
     span.end(); // End the trace span
 
     console.log(result);

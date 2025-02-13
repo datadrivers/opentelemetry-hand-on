@@ -13,6 +13,15 @@ Using:
 - Grafana - To visualize metrics from Prometheus
 - Loki - To visualize logs
 
+## URLs
+
+- Jaeger - http://localhost:16686
+- Prometheus - http://localhost:9090
+- Grafana - http://localhost:3000
+  - User: `admin`
+  - Default password: `admin`
+- Loki - http://localhost:3100
+
 ## TODOs
 
 - [ ] Decide whether to use Jaeger or OpenTelemetry Collector to collect traces, metrics and logs

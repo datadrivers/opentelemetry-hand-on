@@ -6,7 +6,7 @@ import { faker } from '@faker-js/faker';
 const PORT: number = parseInt(process.env.PORT || '8080');
 const app: Express = express();
 
-const tracer = trace.getTracer('my-app');
+const tracer = trace.getTracer(process.env.OTEL_SERVICE_NAME || 'my-app');
 
 function getRandomNumber(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1) + min);

@@ -7,11 +7,17 @@ import { PeriodicExportingMetricReader } from '@opentelemetry/sdk-metrics';
 const otlpEndpoint = process.env.OTEL_EXPORTER_OTLP_ENDPOINT || 'http://otel-collector:4317';
 
 const traceExporter = new OTLPTraceExporter({
-    url: `${otlpEndpoint}`,
+    // optional - default url is http://localhost:4318/v1/traces
+    url: `${otlpEndpoint}/v1/traces`,
+    // optional - collection of custom headers to be sent with each request, empty by default
+    headers: {},
 });
 
 const metricExporter = new OTLPMetricExporter({
-    url: `${otlpEndpoint}`,
+    // url is optional and can be omitted - default is http://localhost:4318/v1/metrics
+    url: `${otlpEndpoint}/v1/metrics`,
+    // an optional object containing custom headers to be sent with each request
+    headers: {},
 });
 
 const sdk = new NodeSDK({

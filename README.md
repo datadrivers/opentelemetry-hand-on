@@ -56,3 +56,13 @@ docker compose logs -f app
 # ... or of the collector
 docker compose logs -f otel-collector
 ```
+
+## Send requests to the app
+
+```bash
+# GET /rolldice
+curl http://localhost:8080/rolldice
+
+# GET /rollrick
+curl http://localhost:8080/rollrick
+```
